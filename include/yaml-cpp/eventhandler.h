@@ -27,6 +27,8 @@ class EventHandler {
   virtual void OnScalar(const Mark& mark, const std::string& tag,
                         anchor_t anchor, const std::string& value) = 0;
 
+  virtual void OnComment(const Mark& mark, const std::string& value) = 0;
+
   virtual void OnSequenceStart(const Mark& mark, const std::string& tag,
                                anchor_t anchor, EmitterStyle::value style) = 0;
   virtual void OnSequenceEnd() = 0;
@@ -35,6 +37,6 @@ class EventHandler {
                           anchor_t anchor, EmitterStyle::value style) = 0;
   virtual void OnMapEnd() = 0;
 };
-}
+}  // namespace YAML
 
 #endif  // EVENTHANDLER_H_62B23520_7C8E_11DE_8A39_0800200C9A66

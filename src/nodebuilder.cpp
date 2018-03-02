@@ -48,6 +48,10 @@ void NodeBuilder::OnScalar(const Mark& mark, const std::string& tag,
   Pop();
 }
 
+void NodeBuilder::OnComment(const Mark& mark, const std::string& value) {
+  // nothing
+}
+
 void NodeBuilder::OnSequenceStart(const Mark& mark, const std::string& tag,
                                   anchor_t anchor, EmitterStyle::value style) {
   detail::node& node = Push(mark, anchor);
@@ -127,4 +131,4 @@ void NodeBuilder::RegisterAnchor(anchor_t anchor, detail::node& node) {
     m_anchors.push_back(&node);
   }
 }
-}
+}  // namespace YAML

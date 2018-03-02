@@ -32,6 +32,8 @@ class EmitFromEvents : public EventHandler {
   virtual void OnScalar(const Mark& mark, const std::string& tag,
                         anchor_t anchor, const std::string& value);
 
+  virtual void OnComment(const Mark& mark, const std::string& value);
+
   virtual void OnSequenceStart(const Mark& mark, const std::string& tag,
                                anchor_t anchor, EmitterStyle::value style);
   virtual void OnSequenceEnd();
@@ -52,6 +54,6 @@ class EmitFromEvents : public EventHandler {
   };
   std::stack<State::value> m_stateStack;
 };
-}
+}  // namespace YAML
 
 #endif  // EMITFROMEVENTS_H_62B23520_7C8E_11DE_8A39_0800200C9A66

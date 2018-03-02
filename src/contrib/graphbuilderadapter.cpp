@@ -28,6 +28,11 @@ void GraphBuilderAdapter::OnScalar(const Mark &mark, const std::string &tag,
   DispositionNode(pNode);
 }
 
+void GraphBuilderAdapter::OnComment(const Mark &mark,
+                                    const std::string &value) {
+  // nothing
+}
+
 void GraphBuilderAdapter::OnSequenceStart(const Mark &mark,
                                           const std::string &tag,
                                           anchor_t anchor,
@@ -91,4 +96,4 @@ void GraphBuilderAdapter::DispositionNode(void *pNode) {
     m_builder.AppendToSequence(pContainer, pNode);
   }
 }
-}
+}  // namespace YAML

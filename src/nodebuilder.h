@@ -39,6 +39,8 @@ class NodeBuilder : public EventHandler {
   virtual void OnScalar(const Mark& mark, const std::string& tag,
                         anchor_t anchor, const std::string& value);
 
+  virtual void OnComment(const Mark& mark, const std::string& value);
+
   virtual void OnSequenceStart(const Mark& mark, const std::string& tag,
                                anchor_t anchor, EmitterStyle::value style);
   virtual void OnSequenceEnd();
@@ -65,6 +67,6 @@ class NodeBuilder : public EventHandler {
   std::vector<PushedKey> m_keys;
   std::size_t m_mapDepth;
 };
-}
+}  // namespace YAML
 
 #endif  // NODE_NODEBUILDER_H_62B23520_7C8E_11DE_8A39_0800200C9A66

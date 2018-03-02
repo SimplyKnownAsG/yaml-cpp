@@ -16,7 +16,7 @@ std::string ToString(YAML::anchor_t anchor) {
   stream << anchor;
   return stream.str();
 }
-}
+}  // namespace
 
 namespace YAML {
 EmitFromEvents::EmitFromEvents(Emitter& emitter) : m_emitter(emitter) {}
@@ -41,6 +41,10 @@ void EmitFromEvents::OnScalar(const Mark&, const std::string& tag,
   BeginNode();
   EmitProps(tag, anchor);
   m_emitter << value;
+}
+
+void EmitFromEvents::OnComment(const Mark& mark, const std::string& value) {
+  // nothing
 }
 
 void EmitFromEvents::OnSequenceStart(const Mark&, const std::string& tag,
@@ -116,4 +120,4 @@ void EmitFromEvents::EmitProps(const std::string& tag, anchor_t anchor) {
   if (anchor)
     m_emitter << Anchor(ToString(anchor));
 }
-}
+}  // namespace YAML

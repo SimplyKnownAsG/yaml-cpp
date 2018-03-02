@@ -15,6 +15,8 @@ class MockEventHandler : public EventHandler {
   MOCK_METHOD4(OnScalar, void(const Mark&, const std::string&, anchor_t,
                               const std::string&));
 
+  MOCK_METHOD2(OnComment, void(const Mark&, const std::string&));
+
   MOCK_METHOD4(OnSequenceStart, void(const Mark&, const std::string&, anchor_t,
                                      EmitterStyle::value));
   MOCK_METHOD0(OnSequenceEnd, void());
@@ -23,4 +25,4 @@ class MockEventHandler : public EventHandler {
                                 EmitterStyle::value));
   MOCK_METHOD0(OnMapEnd, void());
 };
-}
+}  // namespace YAML

@@ -36,6 +36,8 @@ class GraphBuilderAdapter : public EventHandler {
   virtual void OnScalar(const Mark& mark, const std::string& tag,
                         anchor_t anchor, const std::string& value);
 
+  virtual void OnComment(const Mark& mark, const std::string& value);
+
   virtual void OnSequenceStart(const Mark& mark, const std::string& tag,
                                anchor_t anchor, EmitterStyle::value style);
   virtual void OnSequenceEnd();
@@ -74,6 +76,6 @@ class GraphBuilderAdapter : public EventHandler {
   void RegisterAnchor(anchor_t anchor, void* pNode);
   void DispositionNode(void* pNode);
 };
-}
+}  // namespace YAML
 
 #endif  // GRAPHBUILDERADAPTER_H_62B23520_7C8E_11DE_8A39_0800200C9A66

@@ -296,5 +296,5 @@ void node_data::convert_sequence_to_map(shared_memory_holder pMemory) {
   reset_sequence();
   m_type = NodeType::Map;
 }
-}
-}
+}  // namespace detail
+}  // namespace YAML
